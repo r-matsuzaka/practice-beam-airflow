@@ -1,66 +1,102 @@
+# https://github.com/apache/beam/blob/master/sdks/python/apache_beam/examples/wordcount.py
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+"""A word-counting workflow."""
+
+# pytype: skip-file
+
+# beam-playground:
+#   name: WordCount
+#   description: An example that counts words in Shakespeare's works.
+#   multifile: false
+#   pipeline_options: --output output.txt
+#   categories:
+#     - Combiners
+#     - Options
+#     - Quickstart
+
+import argparse
+import logging
+import re
+
 import apache_beam as beam
-from apache_beam.options.pipeline_options import GoogleCloudOptions
+from apache_beam.io import ReadFromText
+from apache_beam.io import WriteToText
 from apache_beam.options.pipeline_options import PipelineOptions
-from apache_beam.options.pipeline_options import StandardOptions
-from apache_beam.options.pipeline_options import WorkerOptions
+from apache_beam.options.pipeline_options import SetupOptions
 
 
-GCP_PROJECT_ID = 'my-project-id'
-GCS_BUCKET_NAME = 'gs://my-bucket-name'
-JOB_NAME = 'compute-word-length'
+class WordExtractingDoFn(beam.DoFn):
+  """Parse each line of input text into words."""
+  def process(self, element):
+    """Returns an iterator over the words of this element.
+    The element is a line of text.  If the line is blank, note that, too.
+    Args:
+      element: the element being processed
+    Returns:
+      The processed element.
+    """
+    return re.findall(r'[\w\']+', element, re.UNICODE)
 
 
-class MyOptions(PipelineOptions):
-    """カスタムオプション."""
-    @classmethod
-    def _add_argparse_args(cls, parser):
-        parser.add_argument(
-            '--input',
-            default='{}/input.txt'.format(GCS_BUCKET_NAME),  # GCS に input.txt を置く
-            help='Input for the pipeline')
+def run(argv=None, save_main_session=True):
+  """Main entry point; defines and runs the wordcount pipeline."""
+  parser = argparse.ArgumentParser()
+  parser.add_argument(
+      '--input',
+      dest='input',
+      required=True,
+      help='Input file to process.')
+  parser.add_argument(
+      '--output',
+      dest='output',
+      required=True,
+      help='Output file to write results to.')
+  known_args, pipeline_args = parser.parse_known_args(argv)
 
-        parser.add_argument(
-            '--output',
-            default='{}/output.txt'.format(GCS_BUCKET_NAME),  # GCS に出力する
-            help='Output for the pipeline')
+  # We use the save_main_session option because one or more DoFn's in this
+  # workflow rely on global context (e.g., a module imported at module level).
+  pipeline_options = PipelineOptions(pipeline_args)
+  pipeline_options.view_as(SetupOptions).save_main_session = save_main_session
 
+  # The pipeline will be run on exiting the with block.
+  with beam.Pipeline(options=pipeline_options) as p:
 
-class ComputeWordLength(beam.DoFn):
-    """文字数を求める変換処理."""
+    # Read the text file[pattern] into a PCollection.
+    lines = p | 'Read' >> ReadFromText(known_args.input)
 
-    def __init__(self):
-        pass
+    counts = (
+        lines
+        | 'Split' >> (beam.ParDo(WordExtractingDoFn()).with_output_types(str))
+        | 'PairWithOne' >> beam.Map(lambda x: (x, 1))
+        | 'GroupAndSum' >> beam.CombinePerKey(sum))
 
-    def process(self, element):
-        yield len(element)
+    # Format the counts into a PCollection of strings.
+    def format_result(word, count):
+      return '%s: %d' % (word, count)
 
+    output = counts | 'Format' >> beam.MapTuple(format_result)
 
-def run():
-    options = MyOptions()
-
-    # GCP オプション
-    google_cloud_options = options.view_as(GoogleCloudOptions)
-    google_cloud_options.project = GCP_PROJECT_ID  # プロジェクトID
-    google_cloud_options.job_name = JOB_NAME  # 任意のジョブ名
-    google_cloud_options.staging_location = '{}/binaries'.format(GCS_BUCKET_NAME)  # ファイルをステージングするための GCS パス
-    google_cloud_options.temp_location = '{}/temp'.format(GCS_BUCKET_NAME)  # 一時ファイルの GCS パス
-
-    # ワーカーオプション
-    options.view_as(WorkerOptions).autoscaling_algorithm = 'THROUGHPUT_BASED'  # 自動スケーリングを有効化する
-
-    # 標準オプション
-    options.view_as(StandardOptions).runner = 'DataflowRunner'  # Dataflow ランナーを指定
-
-    p = beam.Pipeline(options=options)
-
-    (p
-     | 'ReadFromText' >> beam.io.ReadFromText(options.input)
-     | 'ComputeWordLength' >> beam.ParDo(ComputeWordLength())
-     | 'WriteToText' >> beam.io.WriteToText(options.output, shard_name_template=""))
-
-    p.run()
-    # p.run().wait_until_finish()  # パイプラインの完了までブロックする
+    # Write the output using a "Write" transform that has side effects.
+    # pylint: disable=expression-not-assigned
+    output | 'Write' >> WriteToText(known_args.output)
 
 
 if __name__ == '__main__':
-    run()
+  logging.getLogger().setLevel(logging.INFO)
+  run()
