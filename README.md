@@ -6,15 +6,23 @@
 2. サービスアカウントに権限を付与
 3. Credentialを作成しダウンロード
 4. key.jsonとしてコンソールに保存
-vimで貼り付けるときは`:set paste`で自動インデントを回避できる
-
 5. 下記を実行してサービスアカウントをアクティベート
-```python
-export GOOGLE_CLOUD_PROJECT=key.json
-gcloud auth activate-service-account --key-file=key.json
 ```
+export GOOGLE_APPLICATION_CREDENTIALS=credential/key.json
+gcloud auth activate-service-account --key-file=credential/key.json
+```
+6.GCSのバケットを作成
 
-6. 下記を実行(東京:asia-northeast1の場合)
+
+## Example
+
+### ex1: pipeline.py
+テキストを読み取って単語の数をカウントする  
+
+- 実行方法
+GCSのバケットに文章を入力したテキスト(input.txt)を保存する。  
+`yourstoragename``とyourregion`は適宜変更する
+
 ```python
-python pipeline.py --input=gs://yourstoragename/input.txt --output=gs://yourstoragename/output.txt --region asia-northeast1
+poetry run python src/pipeline.py --input=gs://yourstoragename/input.txt --output=gs://yourstoragename/output.txt --region yourregion
 ```
