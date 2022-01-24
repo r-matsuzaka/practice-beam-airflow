@@ -1,1 +1,2 @@
 apache-beam[gcp]
+apache-airflow==2.2.3
