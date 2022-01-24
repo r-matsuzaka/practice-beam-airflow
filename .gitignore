@@ -1,3 +1,4 @@
 credential
 airflow/logs
+airflow/airflow.db
 .idea
