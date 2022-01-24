@@ -1,0 +1,7 @@
+[2022-01-24 22:37:13,673] {processor.py:163} INFO - Started process (PID=26002) to work on /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_latest_only_with_trigger.py
+[2022-01-24 22:37:13,674] {processor.py:642} INFO - Processing file /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_latest_only_with_trigger.py for tasks to queue
+[2022-01-24 22:37:13,674] {logging_mixin.py:109} INFO - [2022-01-24 22:37:13,674] {dagbag.py:500} INFO - Filling up the DagBag from /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_latest_only_with_trigger.py
+[2022-01-24 22:37:13,682] {processor.py:654} INFO - DAG(s) dict_keys(['latest_only_with_trigger']) retrieved from /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_latest_only_with_trigger.py
+[2022-01-24 22:37:13,686] {logging_mixin.py:109} INFO - [2022-01-24 22:37:13,685] {dag.py:2396} INFO - Sync 1 DAGs
+[2022-01-24 22:37:13,691] {logging_mixin.py:109} INFO - [2022-01-24 22:37:13,691] {dag.py:2935} INFO - Setting next_dagrun for latest_only_with_trigger to 2022-01-24T09:37:13.690908+00:00
+[2022-01-24 22:37:13,704] {processor.py:171} INFO - Processing /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_latest_only_with_trigger.py took 0.032 seconds

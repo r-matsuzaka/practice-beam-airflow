@@ -1,0 +1,7 @@
+[2022-01-24 22:37:09,775] {processor.py:163} INFO - Started process (PID=25998) to work on /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_branch_datetime_operator.py
+[2022-01-24 22:37:09,775] {processor.py:642} INFO - Processing file /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_branch_datetime_operator.py for tasks to queue
+[2022-01-24 22:37:09,775] {logging_mixin.py:109} INFO - [2022-01-24 22:37:09,775] {dagbag.py:500} INFO - Filling up the DagBag from /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_branch_datetime_operator.py
+[2022-01-24 22:37:09,784] {processor.py:654} INFO - DAG(s) dict_keys(['example_branch_datetime_operator_2']) retrieved from /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_branch_datetime_operator.py
+[2022-01-24 22:37:09,787] {logging_mixin.py:109} INFO - [2022-01-24 22:37:09,787] {dag.py:2396} INFO - Sync 1 DAGs
+[2022-01-24 22:37:09,793] {logging_mixin.py:109} INFO - [2022-01-24 22:37:09,793] {dag.py:2935} INFO - Setting next_dagrun for example_branch_datetime_operator_2 to 2022-01-23 00:00:00+00:00
+[2022-01-24 22:37:09,811] {processor.py:171} INFO - Processing /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_branch_datetime_operator.py took 0.038 seconds

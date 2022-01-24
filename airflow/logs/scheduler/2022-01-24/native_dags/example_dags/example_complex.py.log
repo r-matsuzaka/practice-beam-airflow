@@ -1,0 +1,7 @@
+[2022-01-24 22:37:05,098] {processor.py:163} INFO - Started process (PID=25988) to work on /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_complex.py
+[2022-01-24 22:37:05,100] {processor.py:642} INFO - Processing file /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2022-01-24 22:37:05,101] {logging_mixin.py:109} INFO - [2022-01-24 22:37:05,101] {dagbag.py:500} INFO - Filling up the DagBag from /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_complex.py
+[2022-01-24 22:37:05,140] {processor.py:654} INFO - DAG(s) dict_keys(['example_complex']) retrieved from /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_complex.py
+[2022-01-24 22:37:05,149] {logging_mixin.py:109} INFO - [2022-01-24 22:37:05,149] {dag.py:2396} INFO - Sync 1 DAGs
+[2022-01-24 22:37:05,157] {logging_mixin.py:109} INFO - [2022-01-24 22:37:05,157] {dag.py:2935} INFO - Setting next_dagrun for example_complex to None
+[2022-01-24 22:37:05,172] {processor.py:171} INFO - Processing /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_complex.py took 0.079 seconds

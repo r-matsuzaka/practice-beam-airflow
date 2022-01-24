@@ -1,0 +1,12 @@
+[2022-01-24 22:37:14,807] {processor.py:163} INFO - Started process (PID=26003) to work on /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_subdag_operator.py
+[2022-01-24 22:37:14,807] {processor.py:642} INFO - Processing file /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_subdag_operator.py for tasks to queue
+[2022-01-24 22:37:14,807] {logging_mixin.py:109} INFO - [2022-01-24 22:37:14,807] {dagbag.py:500} INFO - Filling up the DagBag from /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_subdag_operator.py
+[2022-01-24 22:37:14,818] {processor.py:654} INFO - DAG(s) dict_keys(['example_subdag_operator.section-1', 'example_subdag_operator.section-2', 'example_subdag_operator']) retrieved from /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_subdag_operator.py
+[2022-01-24 22:37:14,822] {logging_mixin.py:109} INFO - [2022-01-24 22:37:14,822] {dag.py:2396} INFO - Sync 3 DAGs
+[2022-01-24 22:37:14,828] {logging_mixin.py:109} INFO - [2022-01-24 22:37:14,828] {dag.py:2935} INFO - Setting next_dagrun for example_subdag_operator to 2022-01-22T00:00:00+00:00
+[2022-01-24 22:37:14,828] {logging_mixin.py:109} INFO - [2022-01-24 22:37:14,828] {dag.py:2935} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None
+[2022-01-24 22:37:14,828] {logging_mixin.py:109} INFO - [2022-01-24 22:37:14,828] {dag.py:2935} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None
+[2022-01-24 22:37:14,830] {logging_mixin.py:109} INFO - [2022-01-24 22:37:14,830] {dag.py:2396} INFO - Sync 2 DAGs
+[2022-01-24 22:37:14,833] {logging_mixin.py:109} INFO - [2022-01-24 22:37:14,833] {dag.py:2935} INFO - Setting next_dagrun for example_subdag_operator.section-1 to None
+[2022-01-24 22:37:14,833] {logging_mixin.py:109} INFO - [2022-01-24 22:37:14,833] {dag.py:2935} INFO - Setting next_dagrun for example_subdag_operator.section-2 to None
+[2022-01-24 22:37:14,846] {processor.py:171} INFO - Processing /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_subdag_operator.py took 0.040 seconds

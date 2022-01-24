@@ -1,0 +1,7 @@
+[2022-01-24 22:37:04,919] {processor.py:163} INFO - Started process (PID=25987) to work on /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_skip_dag.py
+[2022-01-24 22:37:04,920] {processor.py:642} INFO - Processing file /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2022-01-24 22:37:04,920] {logging_mixin.py:109} INFO - [2022-01-24 22:37:04,920] {dagbag.py:500} INFO - Filling up the DagBag from /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_skip_dag.py
+[2022-01-24 22:37:04,928] {processor.py:654} INFO - DAG(s) dict_keys(['example_skip_dag']) retrieved from /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_skip_dag.py
+[2022-01-24 22:37:04,932] {logging_mixin.py:109} INFO - [2022-01-24 22:37:04,932] {dag.py:2396} INFO - Sync 1 DAGs
+[2022-01-24 22:37:04,938] {logging_mixin.py:109} INFO - [2022-01-24 22:37:04,938] {dag.py:2935} INFO - Setting next_dagrun for example_skip_dag to 2022-01-23T13:37:04.938342+00:00
+[2022-01-24 22:37:04,951] {processor.py:171} INFO - Processing /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_skip_dag.py took 0.033 seconds

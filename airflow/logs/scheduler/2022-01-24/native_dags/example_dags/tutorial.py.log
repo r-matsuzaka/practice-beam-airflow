@@ -1,0 +1,7 @@
+[2022-01-24 22:36:57,167] {processor.py:163} INFO - Started process (PID=25979) to work on /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/tutorial.py
+[2022-01-24 22:36:57,168] {processor.py:642} INFO - Processing file /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/tutorial.py for tasks to queue
+[2022-01-24 22:36:57,168] {logging_mixin.py:109} INFO - [2022-01-24 22:36:57,168] {dagbag.py:500} INFO - Filling up the DagBag from /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/tutorial.py
+[2022-01-24 22:36:57,176] {processor.py:654} INFO - DAG(s) dict_keys(['tutorial']) retrieved from /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/tutorial.py
+[2022-01-24 22:36:57,179] {logging_mixin.py:109} INFO - [2022-01-24 22:36:57,179] {dag.py:2396} INFO - Sync 1 DAGs
+[2022-01-24 22:36:57,185] {logging_mixin.py:109} INFO - [2022-01-24 22:36:57,184] {dag.py:2935} INFO - Setting next_dagrun for tutorial to 2022-01-23T13:36:57.184838+00:00
+[2022-01-24 22:36:57,197] {processor.py:171} INFO - Processing /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/tutorial.py took 0.031 seconds

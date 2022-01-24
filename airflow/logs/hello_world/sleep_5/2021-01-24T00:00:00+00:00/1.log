@@ -1,0 +1,27 @@
+[2022-01-24 22:08:30,527] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: hello_world.sleep_5 backfill__2021-01-24T00:00:00+00:00 [queued]>
+[2022-01-24 22:08:30,530] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: hello_world.sleep_5 backfill__2021-01-24T00:00:00+00:00 [queued]>
+[2022-01-24 22:08:30,530] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-01-24 22:08:30,530] {taskinstance.py:1239} INFO - Starting attempt 1 of 4
+[2022-01-24 22:08:30,530] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-01-24 22:08:30,543] {taskinstance.py:1259} INFO - Executing <Task(BashOperator): sleep_5> on 2021-01-24 00:00:00+00:00
+[2022-01-24 22:08:30,544] {standard_task_runner.py:52} INFO - Started process 24034 to run task
+[2022-01-24 22:08:30,545] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'hello_world', 'sleep_5', 'backfill__2021-01-24T00:00:00+00:00', '--job-id', '4', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/hello_world_dag.py', '--cfg-path', '/tmp/tmpjfmrj95_', '--error-file', '/tmp/tmpl9egz1px']
+[2022-01-24 22:08:30,546] {standard_task_runner.py:77} INFO - Job 4: Subtask sleep_5
+[2022-01-24 22:08:30,568] {logging_mixin.py:109} INFO - Running <TaskInstance: hello_world.sleep_5 backfill__2021-01-24T00:00:00+00:00 [running]> on host ryo-PC
+[2022-01-24 22:08:30,625] {taskinstance.py:1424} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=your-email@gmail.com
+AIRFLOW_CTX_DAG_OWNER=your-name
+AIRFLOW_CTX_DAG_ID=hello_world
+AIRFLOW_CTX_TASK_ID=sleep_5
+AIRFLOW_CTX_EXECUTION_DATE=2021-01-24T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=backfill__2021-01-24T00:00:00+00:00
+[2022-01-24 22:08:30,626] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-01-24 22:08:30,626] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'sleep 5']
+[2022-01-24 22:08:30,632] {subprocess.py:85} INFO - Output:
+[2022-01-24 22:08:35,635] {subprocess.py:93} INFO - Command exited with return code 0
+[2022-01-24 22:08:35,671] {taskinstance.py:1267} INFO - Marking task as SUCCESS. dag_id=hello_world, task_id=sleep_5, execution_date=20210124T000000, start_date=20220124T130830, end_date=20220124T130835
+[2022-01-24 22:08:35,716] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-01-24 22:08:35,734] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

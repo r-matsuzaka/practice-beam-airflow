@@ -1,0 +1,7 @@
+[2022-01-24 22:36:49,967] {processor.py:163} INFO - Started process (PID=25966) to work on /home/ryo/test-beam/airflow/dags/hello_world_dag.py
+[2022-01-24 22:36:49,967] {processor.py:642} INFO - Processing file /home/ryo/test-beam/airflow/dags/hello_world_dag.py for tasks to queue
+[2022-01-24 22:36:49,968] {logging_mixin.py:109} INFO - [2022-01-24 22:36:49,967] {dagbag.py:500} INFO - Filling up the DagBag from /home/ryo/test-beam/airflow/dags/hello_world_dag.py
+[2022-01-24 22:36:49,978] {processor.py:654} INFO - DAG(s) dict_keys(['hello_world']) retrieved from /home/ryo/test-beam/airflow/dags/hello_world_dag.py
+[2022-01-24 22:36:50,096] {logging_mixin.py:109} INFO - [2022-01-24 22:36:50,096] {dag.py:2396} INFO - Sync 1 DAGs
+[2022-01-24 22:36:50,101] {logging_mixin.py:109} INFO - [2022-01-24 22:36:50,101] {dag.py:2935} INFO - Setting next_dagrun for hello_world to 2022-01-22T00:00:00+00:00
+[2022-01-24 22:36:50,114] {processor.py:171} INFO - Processing /home/ryo/test-beam/airflow/dags/hello_world_dag.py took 0.149 seconds

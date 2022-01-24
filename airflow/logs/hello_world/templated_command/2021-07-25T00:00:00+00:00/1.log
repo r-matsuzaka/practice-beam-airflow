@@ -1,0 +1,44 @@
+[2022-01-24 22:38:02,874] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: hello_world.templated_command backfill__2021-07-25T00:00:00+00:00 [queued]>
+[2022-01-24 22:38:02,878] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: hello_world.templated_command backfill__2021-07-25T00:00:00+00:00 [queued]>
+[2022-01-24 22:38:02,878] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-01-24 22:38:02,878] {taskinstance.py:1239} INFO - Starting attempt 1 of 2
+[2022-01-24 22:38:02,878] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-01-24 22:38:02,890] {taskinstance.py:1259} INFO - Executing <Task(BashOperator): templated_command> on 2021-07-25 00:00:00+00:00
+[2022-01-24 22:38:02,891] {standard_task_runner.py:52} INFO - Started process 26109 to run task
+[2022-01-24 22:38:02,893] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'hello_world', 'templated_command', 'backfill__2021-07-25T00:00:00+00:00', '--job-id', '44', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/hello_world_dag.py', '--cfg-path', '/tmp/tmp30cx8wad', '--error-file', '/tmp/tmpnywz9ew_']
+[2022-01-24 22:38:02,893] {standard_task_runner.py:77} INFO - Job 44: Subtask templated_command
+[2022-01-24 22:38:02,917] {logging_mixin.py:109} INFO - Running <TaskInstance: hello_world.templated_command backfill__2021-07-25T00:00:00+00:00 [running]> on host ryo-PC
+[2022-01-24 22:38:02,942] {taskinstance.py:1424} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=your-email@gmail.com
+AIRFLOW_CTX_DAG_OWNER=your-name
+AIRFLOW_CTX_DAG_ID=hello_world
+AIRFLOW_CTX_TASK_ID=templated_command
+AIRFLOW_CTX_EXECUTION_DATE=2021-07-25T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=backfill__2021-07-25T00:00:00+00:00
+[2022-01-24 22:38:02,942] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-01-24 22:38:02,942] {subprocess.py:74} INFO - Running command: ['bash', '-c', '\n\n     echo "2021-07-25"\n     echo "2021-08-01"\n     echo "Parameter I passed in"\n \n     echo "2021-07-25"\n     echo "2021-08-01"\n     echo "Parameter I passed in"\n \n     echo "2021-07-25"\n     echo "2021-08-01"\n     echo "Parameter I passed in"\n \n     echo "2021-07-25"\n     echo "2021-08-01"\n     echo "Parameter I passed in"\n \n     echo "2021-07-25"\n     echo "2021-08-01"\n     echo "Parameter I passed in"\n ']
+[2022-01-24 22:38:02,945] {subprocess.py:85} INFO - Output:
+[2022-01-24 22:38:02,945] {subprocess.py:89} INFO - 2021-07-25
+[2022-01-24 22:38:02,945] {subprocess.py:89} INFO - 2021-08-01
+[2022-01-24 22:38:02,945] {subprocess.py:89} INFO - Parameter I passed in
+[2022-01-24 22:38:02,945] {subprocess.py:89} INFO - 2021-07-25
+[2022-01-24 22:38:02,946] {subprocess.py:89} INFO - 2021-08-01
+[2022-01-24 22:38:02,946] {subprocess.py:89} INFO - Parameter I passed in
+[2022-01-24 22:38:02,946] {subprocess.py:89} INFO - 2021-07-25
+[2022-01-24 22:38:02,946] {subprocess.py:89} INFO - 2021-08-01
+[2022-01-24 22:38:02,946] {subprocess.py:89} INFO - Parameter I passed in
+[2022-01-24 22:38:02,946] {subprocess.py:89} INFO - 2021-07-25
+[2022-01-24 22:38:02,946] {subprocess.py:89} INFO - 2021-08-01
+[2022-01-24 22:38:02,946] {subprocess.py:89} INFO - Parameter I passed in
+[2022-01-24 22:38:02,946] {subprocess.py:89} INFO - 2021-07-25
+[2022-01-24 22:38:02,946] {subprocess.py:89} INFO - 2021-08-01
+[2022-01-24 22:38:02,946] {subprocess.py:89} INFO - Parameter I passed in
+[2022-01-24 22:38:02,946] {subprocess.py:93} INFO - Command exited with return code 0
+[2022-01-24 22:38:02,967] {taskinstance.py:1267} INFO - Marking task as SUCCESS. dag_id=hello_world, task_id=templated_command, execution_date=20210725T000000, start_date=20220124T133802, end_date=20220124T133802
+[2022-01-24 22:38:02,984] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-01-24 22:38:02,993] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-01-24 22:38:02,997] {dagrun.py:545} INFO - Marking run <DagRun hello_world @ 2021-07-25 00:00:00+00:00: backfill__2021-07-25T00:00:00+00:00, externally triggered: False> successful
+[2022-01-24 22:38:02,997] {dagrun.py:590} INFO - DagRun Finished: dag_id=hello_world, execution_date=2021-07-25 00:00:00+00:00, run_id=backfill__2021-07-25T00:00:00+00:00, run_start_date=2022-01-24 13:37:32.399328+00:00, run_end_date=2022-01-24 13:38:02.997683+00:00, run_duration=30.598355, state=success, external_trigger=False, run_type=backfill, data_interval_start=2021-07-25 00:00:00+00:00, data_interval_end=2021-07-26 00:00:00+00:00, dag_hash=None

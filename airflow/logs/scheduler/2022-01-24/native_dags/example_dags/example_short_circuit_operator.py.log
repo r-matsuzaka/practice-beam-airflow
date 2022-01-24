@@ -1,0 +1,7 @@
+[2022-01-24 22:37:03,359] {processor.py:163} INFO - Started process (PID=25985) to work on /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_short_circuit_operator.py
+[2022-01-24 22:37:03,360] {processor.py:642} INFO - Processing file /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_short_circuit_operator.py for tasks to queue
+[2022-01-24 22:37:03,360] {logging_mixin.py:109} INFO - [2022-01-24 22:37:03,360] {dagbag.py:500} INFO - Filling up the DagBag from /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_short_circuit_operator.py
+[2022-01-24 22:37:03,368] {processor.py:654} INFO - DAG(s) dict_keys(['example_short_circuit_operator']) retrieved from /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_short_circuit_operator.py
+[2022-01-24 22:37:03,372] {logging_mixin.py:109} INFO - [2022-01-24 22:37:03,372] {dag.py:2396} INFO - Sync 1 DAGs
+[2022-01-24 22:37:03,377] {logging_mixin.py:109} INFO - [2022-01-24 22:37:03,377] {dag.py:2935} INFO - Setting next_dagrun for example_short_circuit_operator to 2022-01-23T13:37:03.377499+00:00
+[2022-01-24 22:37:03,391] {processor.py:171} INFO - Processing /home/ryo/.pyenv/versions/3.8.8/lib/python3.8/site-packages/airflow/example_dags/example_short_circuit_operator.py took 0.032 seconds
