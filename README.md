@@ -42,3 +42,7 @@ export AIRFLOW_HOME=path_to_airflow
 ```
 airflow dags backfill hello_world     --start-date 2022-01-26     --end-date 2022-01-26
 ```
+
+## Troubleshooting
+
+[Airflow: dag_id could not be found](https://stackoverflow.com/questions/43235130/airflow-dag-id-could-not-be-found)
